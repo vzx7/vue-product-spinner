@@ -116,6 +116,10 @@ export default {
     );
   },
 
+  beforeDestroy () {
+    console.log(this.$refs);
+  },
+
   destroyed () {
     this.$refs.componentContainer.removeEventListener(
       "wheel",
