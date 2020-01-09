@@ -92,7 +92,8 @@ export default {
       touch: {
         isMoving: false,
         initialX: 0
-      }
+      },
+      imgs: this.images
     };
   },
 
@@ -129,12 +130,12 @@ export default {
 
   methods: {
     initSpinner () {
-      this.spinner.size = this.images.length;
-      this.spinner.currentPath = this.images[0];
+      this.spinner.size = this.imgs.length;
+      this.spinner.currentPath = this.imgs[0];
     },
 
     handlePreload () {
-      PreloadImages(this.images).then(() => (this.imagesPreloaded = true));
+      PreloadImages(this.imgs).then(() => (this.imagesPreloaded = true));
     },
 
     handleKeydown (event) {
@@ -150,7 +151,7 @@ export default {
 
     handleSlider (event) {
       this.spinner.current = parseInt(event.target.value);
-      this.spinner.currentPath = this.images[event.target.value - 1];
+      this.spinner.currentPath = this.imgs[event.target.value - 1];
     },
 
     handleMouseDown () {
@@ -194,7 +195,6 @@ export default {
     handleMovement (delta) {
       this.speedController++;
       if (this.speedController < this.speed) {
-        console.log("ad");
         return;
       }
 
@@ -211,11 +211,11 @@ export default {
           this.spinner.current < this.spinner.size
         ) {
           this.spinner.current++;
-          this.spinner.currentPath = this.images[this.spinner.current - 1];
+          this.spinner.currentPath = this.imgs[this.spinner.current - 1];
         } else {
           if (this.infinite) {
             this.spinner.current = 1;
-            this.spinner.currentPath = this.images[this.spinner.current - 1];
+            this.spinner.currentPath = this.imgs[this.spinner.current - 1];
           }
         }
       } else {
@@ -224,11 +224,11 @@ export default {
          */
         if (this.spinner.current >= 0 && this.spinner.current - 1 > 0) {
           this.spinner.current--;
-          this.spinner.currentPath = this.images[this.spinner.current - 1];
+          this.spinner.currentPath = this.imgs[this.spinner.current - 1];
         } else {
           if (this.infinite) {
             this.spinner.current = this.spinner.size;
-            this.spinner.currentPath = this.images[this.spinner.current - 1];
+            this.spinner.currentPath = this.imgs[this.spinner.current - 1];
           }
         }
       }
