@@ -1,6 +1,6 @@
 {
   "name": "vue-product-spinner",
-  "version": "0.2.0",
+  "version": "0.1.7",
   "private": false,
   "author": {
     "name": "Michele Riva",
@@ -38,7 +38,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "vue": "2.6.3"
+    "vue": "2.6.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.4.0",
@@ -58,7 +58,7 @@
     "stylelint": "9.10.1",
     "stylelint-config-standard": "18.2.0",
     "vue-spinner": "1.0.3",
-    "vue-template-compiler": "2.6.3"
+    "vue-template-compiler": "2.6.12"
   },
   "contributors": [
     "Mattia Astorino <@equinusocio> (https://equinsuocha.io)"
